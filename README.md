@@ -4,7 +4,7 @@
 
 # Project Description
 
-This was app was created to emulate a similar database/functionality of that of Instagram. This project will be built using a Ruby a Ruby on Rails server, exposing RESTful JSON endpoints. All essential information were stored in a SQL database. Rails was used to define all my models for interacting with the database. Authentication using JWT was implemented within this app. All controllers were made to have full-CRUD capabilites. The front-end of the app is built with React. I will also be using React's routing library, React-Router to help the nagivation of my front-end. In addition, the styling of the site was designed primarly on CSS. Bootstrap was also used for tiny feature within this app. My focus is to make this app feel as dynamic, authenic and user-friendly as possible. 
+This was app was created to emulate a similar database/functionality of that of Instagram. This project will be built using a Ruby a Ruby on Rails server, exposing RESTful JSON endpoints. All essential information were stored in a SQL database. Rails was used to define all my models for interacting with the database. Authentication using JWT was implemented within this app. All controllers were made to have full-CRUD capabilites. The front-end of the app is built with React. I will also be using React's routing library, React-Router to help the nagivation of my front-end. In addition, the styling of the site was designed primarly on CSS. Bootstrap was also used for tiny feature within this app. My focus is to make this app feel as dynamic, authenic and user-friendly as possible.
 
 # API
 
