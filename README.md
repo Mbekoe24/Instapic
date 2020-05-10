@@ -28,11 +28,16 @@ This was app was created to emulate a similar database/functionality of that of 
 
 - Have a UX Designer & a Software Engineer critique my app, to see how I can improve the users experience & code.
 
+- Add search user functionality
+
 - Set up the functionality for followers and following fors users.
 
 - In additon, I will be be including a favicon in place this will bring that more organic website feel.
 
 # Wireframe/ ERD :
 
-![iPhoto!](https://res.cloudinary.com/dzwjxdnjs/image/upload/v1589138313/iPhoto_ERD_tjnn9q.png)
-![NBA!](https://res.cloudinary.com/dzwjxdnjs/image/upload/v1585527712/hp_b0zx2n.png)
+![Instapic!](https://res.cloudinary.com/dzwjxdnjs/image/upload/v1589138313/iPhoto_ERD_tjnn9q.png)
+![Instapic!](https://res.cloudinary.com/dzwjxdnjs/image/upload/v1589146481/Web_1920_1_ekqxuy.png)
+![Instapic!](https://res.cloudinary.com/dzwjxdnjs/image/upload/v1589146487/Web_1920_2_iomcfe.png)
+![Instapic!](https://res.cloudinary.com/dzwjxdnjs/image/upload/v1589146492/Web_1920_3_u82ari.png)
+![Instapic!](https://res.cloudinary.com/dzwjxdnjs/image/upload/v1589146495/Web_1920_5_oeoajz.png)
