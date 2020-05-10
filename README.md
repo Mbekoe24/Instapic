@@ -36,16 +36,17 @@ This was app was created to emulate a similar database/functionality of that of 
 
 # Wireframe/ ERD :
 
+Instapic ERD:
 ![Instapic!](https://res.cloudinary.com/dzwjxdnjs/image/upload/v1589138313/iPhoto_ERD_tjnn9q.png)
 
-Log in/ Sign Up Page
+Log in/ Sign Up Page:
 ![Instapic!](https://res.cloudinary.com/dzwjxdnjs/image/upload/v1589146481/Web_1920_1_ekqxuy.png)
 
-Homepage
+Homepage:
 ![Instapic!](https://res.cloudinary.com/dzwjxdnjs/image/upload/v1589146487/Web_1920_2_iomcfe.png)
 
-Profile Page
+Profile Page:
 ![Instapic!](https://res.cloudinary.com/dzwjxdnjs/image/upload/v1589146492/Web_1920_3_u82ari.png)
 
-Edit Picture/ Photo View
+Edit Picture/ Photo View:
 ![Instapic!](https://res.cloudinary.com/dzwjxdnjs/image/upload/v1589146495/Web_1920_5_oeoajz.png)
