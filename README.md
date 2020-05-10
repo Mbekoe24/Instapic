@@ -6,13 +6,21 @@
 
 This was app was created to emulate a similar database/functionality of that of Instagram. This project will be built using Ruby, Ruby on Rails to host the back-end & a front-end of React.js. My focus is to make this app feel as dynamic, authenic and user-friendly as possible. I will be using React's routing library React-Router to help the nagivation of my front-end. Front-end will be designed using CSS & Bootstrap.
 
-# API:
+# API
 
-- I will be creating my own.
+- Creating my own.
 
 # MVP
 
-- For MVP, I will have all my logic/data in my back-end implemented & linked to front-end my components.
+- All user, post, comment, likes, and photo databases be completed.
+
+- Have models defined by Rails for interacting with my databases.
+
+- Authentifcation using JWT will be implemented.
+
+- All  generic controller actions for full-CRUD (index, show, create, update, delete) will be completed.
+
+- For MVP, I will have all madditonaly logic/data in my  back-end implemented & linked to front-end my components.
 
 - All post will be rendered in user's timelines in order of when they were each created
 
