@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users do
-resources :post do 
-    resources :photo
+resources :posts do 
+    resources :photos
     end
   end
   post '/auth/login', to: 'authentication#login'
