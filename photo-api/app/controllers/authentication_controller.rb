@@ -17,10 +17,10 @@ class AuthenticationController < ApplicationController
     render json: @current_user.return_data, status: :ok
   end
 
+
   private
-  
+
   def login_params
     params.require(:auth).permit(:username, :password)
   end
-
 end
