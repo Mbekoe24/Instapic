@@ -18,6 +18,8 @@ This was app was created to emulate a similar database/functionality of that of 
 
 - Authentifcation using JWT will be implemented.
 
+- The User, Post and Photo table will be incoperated before all other features.
+
 - All  generic controller actions for full-CRUD (index, show, create, update, delete) will be completed.
 
 - For MVP, I will have all madditonaly logic/data in my  back-end implemented & linked to front-end my components.
@@ -35,6 +37,8 @@ This was app was created to emulate a similar database/functionality of that of 
 # Post-MVP
 
 - Have a UX Designer & a Software Engineer critique my app, to see how I can improve the users experience & code.
+
+- Add additonal features to upload image and store it in backend, as well as likes and comments
 
 - Add animation/ Framer Motion to Login/ Sign Up page iPhone images.
 
