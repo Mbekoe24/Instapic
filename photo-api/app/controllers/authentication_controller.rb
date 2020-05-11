@@ -11,7 +11,7 @@ class AuthenticationController < ApplicationController
       render json: { errors: 'unauthorized' }, status: :unauthorized
     end
   end
-  
+     
   # GET /auth/verify
   def verify
     render json: @current_user.return_data, status: :ok
