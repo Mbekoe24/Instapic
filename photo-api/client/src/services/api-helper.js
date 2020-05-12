@@ -44,9 +44,10 @@ export const removeToken = () => {
 // ==================================
 
 
-
-
-
+export const getAllPost = async () => {
+  const resp = await api.get("/posts");
+  return resp.data;
+};
 
 // ===================================
 // =============photos ===============
