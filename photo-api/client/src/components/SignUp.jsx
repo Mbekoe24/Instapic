@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./Login.css";
 
-export default class Login extends Component {
+export default class SignUp extends Component {
   state = {
     username: "",
+    email: "",
     password: "",
   };
 
@@ -16,7 +16,7 @@ export default class Login extends Component {
   };
 
   render() {
-    const { username, password } = this.state;
+    const { username, email, password } = this.state;
     return (
       <div className="main-container">
         <img className="iPhone" src="https://i.imgur.com/aGENvJd.png" />
@@ -25,7 +25,7 @@ export default class Login extends Component {
             className="login-form"
             onSubmit={(e) => {
               e.preventDefault();
-              this.props.handleLogin(this.state);
+              this.props.handleRegister(this.state);
               this.props.history.push("/home");
             }}
           >
@@ -41,14 +41,15 @@ export default class Login extends Component {
               onChange={this.handleChange}
             />
             <br />
-            {/* <label htmlFor="email">email:</label>
-        <input
-          id="email"
-          type="text"
-          name="email"
-          value={email}
-          onChange={this.handleChange}
-        /> */}
+            {/* <label htmlFor="email">email:</label> */}
+            <input
+              className="email-input"
+              id="email"
+              type="text"
+              name="email"
+              value={email}
+              onChange={this.handleChange}
+            />
             <br />
             {/* <label htmlFor="password">password:</label> */}
             <input
@@ -61,18 +62,9 @@ export default class Login extends Component {
               onChange={this.handleChange}
             />
             <br />
-            <button className="log-in-button">Log In</button>
+            <button className="log-in-button">Sign Up</button>
 
             <hr className="sign-up-divider" />
-
-            <div className="sign-up-container">
-              <p>
-                Don’t have an account?
-                <Link to="/signup">
-                  <span className="sign-up-title"> Sign Up</span>
-                </Link>
-              </p>
-            </div>
           </form>
         </div>
       </div>

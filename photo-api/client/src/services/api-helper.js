@@ -37,17 +37,60 @@ export const verifyUser = async () => {
 export const removeToken = () => {
   api.defaults.headers.common.authorization = null;
 };
- 
 
 // ===================================
 // =============post ===============
 // ==================================
 
+export const getAllPost = async () => {
+  const resp = await api.get("/posts");
+  return resp.data;
+};
 
+export const getOnePost = async (id) => {
+  const resp = await api.get(`/posts/${id}`);
+  return resp.data;
+};
 
+export const postPost = async (postData) => {
+  const resp = await api.post("/posts", postData);
+  return resp.data;
+};
+// update content of a post which is updating
+export const putPost = async (id, postData) => {
+  const resp = await api.put(`/posts/${id}`, postData);
+  return resp.data;
+};
 
-
-
+export const destroyPost = async (id) => {
+  const resp = await api.delete(`/post/${id}`);
+  return resp;
+};
 // ===================================
 // =============photos ===============
 // ==================================
+
+export const getAllPhotos = async () => {
+  const resp = await api.get("/photos");
+  return resp.data;
+};
+
+export const getOnePhoto = async (id) => {
+  const resp = await api.get(`/photos/${id}`);
+  return resp.data;
+};
+
+export const postPhoto = async (photoData) => {
+  const resp = await api.post("/photos", photoData);
+  return resp.data;
+};
+// editng photo you want to update - one individual photo
+export const putPhoto = async (id, photoData) => {
+  const resp = await api.put(`/posts/${post_id}/photos/${id}`, photoData);
+  return resp.data;
+};
+
+export const destroyPhoto = async (id) => {
+  const resp = await api.delete(`/photos/${id}`);
+  return resp;
+};
