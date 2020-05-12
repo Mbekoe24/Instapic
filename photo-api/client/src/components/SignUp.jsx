@@ -19,7 +19,7 @@ export default class SignUp extends Component {
     const { username, email, password } = this.state;
     return (
       <div className="main-container">
-        <img classname="iPhone" src="https://i.imgur.com/aGENvJd.png" />
+        <img className="iPhone" src="https://i.imgur.com/aGENvJd.png" />
         <div className="login">
           <form
             className="login-form"
@@ -41,8 +41,9 @@ export default class SignUp extends Component {
               onChange={this.handleChange}
             />
             <br />
-            <label htmlFor="email">email:</label>
+            {/* <label htmlFor="email">email:</label> */}
             <input
+              className="email-input"
               id="email"
               type="text"
               name="email"

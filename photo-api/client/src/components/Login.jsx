@@ -19,7 +19,7 @@ export default class Login extends Component {
     const { username, password } = this.state;
     return (
       <div className="main-container">
-        <img classname="iPhone" src="https://i.imgur.com/aGENvJd.png" />
+        <img className="iPhone" src="https://i.imgur.com/aGENvJd.png" />
         <div className="login">
           <form
             className="login-form"

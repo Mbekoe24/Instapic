@@ -2,17 +2,18 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: end;
+  align-items: center;
 }
 .iPhone {
   margin-top: 50px;
+
   width: 500px;
-  height: 500px;
+  height: 600px;
 }
 .login {
   display: flex;
   justify-content: flex-end;
-  margin-right: 75px;
-  margin-top: 75px;
+  justify-self: start;
 }
 
 .login-form {
