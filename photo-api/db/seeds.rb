@@ -11,7 +11,7 @@ User.create(username: "Admin", email: "admin@email.com", password: "123456")
 
 p "#{User.count} user(s) created"
 Post.create(name: 'Administration', content: "testing", user_id: 1)
-Photo.create(name: 'Invader Admin', image_url:'https://www.jamiesale-cartoonist.com/wp-content/uploads/cartoon-business-man-free-2500x2500.png', post_id: 1)
+Photo.create(name: 'Invader Admin', image_url:'https://pbs.twimg.com/media/DX-hCBoW0AEUts6.png', post_id: 1)
 
 
 User.create(username: "Jason56", email: "jason56@email.com", password: "121212")

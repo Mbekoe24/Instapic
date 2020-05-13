@@ -7,6 +7,17 @@ export default function Header(props) {
     <div className="header-container">
       <header>
         <p className="header-title">InstaPic</p>
+        {/* <form className="search-form" onSubmit={(e) => props.onSubmit(e)}>
+          <input
+            className="search-input"
+            value={props.username}
+            onChange={(e) => props.onChange(e)}
+            name="Search"
+            placeholder="Search"
+            type="text"
+            autoFocus
+          />
+        </form> */}
 
         {props.currentUser ? (
           <>
@@ -18,7 +29,6 @@ export default function Header(props) {
             <img className="home-image" src="https://i.imgur.com/yH0cOfY.png" />
           </Link>
         )}
-
         {props.currentUser && (
           <>
             <Link to="/posts">posts</Link>
