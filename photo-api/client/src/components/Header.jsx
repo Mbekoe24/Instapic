@@ -25,15 +25,32 @@ export default function Header(props) {
             <button onClick={props.handleLogout}>Logout</button>
           </>
         ) : (
-          <Link to="/home">
-            <img className="home-image" src="https://i.imgur.com/yH0cOfY.png" />
-          </Link>
+          <>
+            <Link to="/home">
+              <img
+                className="home-image"
+                src="https://i.imgur.com/yH0cOfY.png"
+              />
+{/* need to add user photo into header  */}
+              {/* <img
+              className="username-photo"
+              key={photo.id}
+              src={photo.image_url}
+            /> */}
+            </Link>
+            <Link to="/profile">
+              <img
+                className="profile-icon"
+                src="https://i.imgur.com/QfRYlR1.png"
+              />
+            </Link>
+            <img className="edit-icon" src="https://i.imgur.com/xHzjCaG.png" />
+          </>
         )}
         {props.currentUser && (
           <>
             <Link to="/posts">posts</Link>
             <Link to="/photos">Photos</Link>
-            {/* <hr /> */}
           </>
         )}
       </header>

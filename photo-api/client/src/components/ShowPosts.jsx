@@ -24,9 +24,9 @@ export default function ShowPosts(props) {
                   key={photo.id}
                   src={photo.image_url}
                 />
+                <p className="username-content"> {post.content}</p>
               </div>
             ))}
-            <p>{post.content}</p>
           </div>
         ))}
       </div>

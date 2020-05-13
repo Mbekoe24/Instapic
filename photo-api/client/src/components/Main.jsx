@@ -10,6 +10,8 @@ import {
 import ShowPosts from "./ShowPosts";
 import Login from "./Login";
 import SignUp from "./SignUp";
+import Profile from "./Profile"
+import EditProfile from "./EditProfile"
 
 export default class Main extends Component {
   state = {
@@ -78,44 +80,10 @@ export default class Main extends Component {
           render={() => <ShowPosts posts={this.state.posts} />}
         />
 
-        {/* <Route
-          exact
-          path="/foods"
-          render={(props) => (
-            <ShowFoods
-              {...props}
-              handleFoodDelete={this.handleFoodDelete}
-              foods={this.state.foods}
-            />
-          )}
-        />
         <Route
-          path="/foods/new"
-          render={(props) => (
-            <CreateFood {...props} handleFoodSubmit={this.handleFoodSubmit} />
-          )}
+          path="/profile" render={() => <Profile posts={this.state.posts} />}
         />
-        <Route
-          path="/foods/:id/edit"
-          render={(props) => {
-            const { id } = props.match.params;
-            return (
-              <UpdateFood
-                {...props}
-                handleFoodUpdate={this.handleFoodUpdate}
-                foodId={id}
-              />
-            );
-          }}
-        />
-        <Route
-          exact
-          path="/foods/:id"
-          render={(props) => {
-            const { id } = props.match.params;
-            return <FoodItem foodId={id} flavors={this.state.flavors} />;
-          }}
-        /> */}
+        
       </main>
     );
   }
