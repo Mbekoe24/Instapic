@@ -13,7 +13,8 @@ export default function Profile(props) {
         />
         <div className="user-info">
           <h2>
-            Username <button>Edit Profile</button>
+            Username
+            <button className="edit-profile-button">Edit Profile</button>
           </h2>
 
           <p>Bio</p>
