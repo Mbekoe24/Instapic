@@ -1,0 +1,15 @@
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  margin-left: 500px;
+}
+.bio-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: left;
+  align-items: center;
+}
+/* .user-info {
+
+} */
