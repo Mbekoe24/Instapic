@@ -1,0 +1,21 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: row;
+  /* flex-direction: column; */
+  border: 0.5px #707070 solid;
+  background-color: #fafafa;
+}
+.header-title {
+  display: inline-block;
+  font-family: "Helvetica Neue";
+  padding: 0px 20px;
+  color: #707070;
+  font-size: 20px;
+}
+.home-image {
+  align-items: flex-end;
+  width: 40px;
+  height: 40px;
+}

@@ -26,11 +26,21 @@ export default class SignUp extends Component {
             onSubmit={(e) => {
               e.preventDefault();
               this.props.handleRegister(this.state);
-              this.props.history.push("/home");
+              this.props.history.push("/signin");
             }}
           >
             <p className="login-title">InstaPic</p>
             {/* <label htmlFor="username">username:</label> */}
+
+            <input
+              className="email-input"
+              id="email"
+              type="text"
+              name="email"
+              placeholder="email"
+              value={email}
+              onChange={this.handleChange}
+            />
             <input
               className="username-input"
               placeholder="username"
@@ -42,14 +52,7 @@ export default class SignUp extends Component {
             />
             <br />
             {/* <label htmlFor="email">email:</label> */}
-            <input
-              className="email-input"
-              id="email"
-              type="text"
-              name="email"
-              value={email}
-              onChange={this.handleChange}
-            />
+
             <br />
             {/* <label htmlFor="password">password:</label> */}
             <input
@@ -64,7 +67,8 @@ export default class SignUp extends Component {
             <br />
             <button className="log-in-button">Sign Up</button>
 
-            <hr className="sign-up-divider" />
+            {/* <hr className="sign-up-divider" /> */}
+            
           </form>
         </div>
       </div>

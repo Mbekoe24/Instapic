@@ -6,9 +6,14 @@
 }
 .iPhone {
   margin-top: 50px;
-
-  width: 500px;
-  height: 600px;
+  width: 600px;
+  height: 550px;
+}
+.email-input {
+  width: 300px;
+  height: 50px;
+  border-radius: 8px;
+  margin-bottom: 35px;
 }
 .login {
   display: flex;

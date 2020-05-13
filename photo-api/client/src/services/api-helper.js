@@ -42,7 +42,7 @@ export const removeToken = () => {
 // =============post ===============
 // ==================================
 
-export const getAllPost = async () => {
+export const getAllPosts = async () => {
   const resp = await api.get("/posts");
   return resp.data;
 };
@@ -85,7 +85,7 @@ export const postPhoto = async (photoData) => {
   return resp.data;
 };
 // editng photo you want to update - one individual photo
-export const putPhoto = async (id, photoData) => {
+export const putPhoto = async (id, post_id, photoData) => {
   const resp = await api.put(`/posts/${post_id}/photos/${id}`, photoData);
   return resp.data;
 };
