@@ -1,35 +1,38 @@
 import React, { Component } from "react";
+import Header from "./Header";
 
 export default class CreatePost extends Component {
   state = {
-    post: "",
-  };
-
-  componentDidMount() {
-    this.setPost();
-  }
-
-  setPost = async () => {
-    const post = await getOnePost(this.props.postId);
-    this.setState({ post });
+    content: "",
+    photos: [],
+    image_url: "",
   };
 
   handleChange = (e) => {
-    const { value } = e.target;
+    const { name, value } = e.target;
     this.setState({
-      post: value,
+      [name]: value,
     });
   };
-
-  handleSubmit = async (e) => {
+  addPhoto = (e) => {
     e.preventDefault();
-    const post = await addFlavor(this.state.post, this.state.post.id);
-    this.setState({ post });
+    this.setState((prevState) => ({
+      photos: [
+        ...prevState.photos,
+        {
+          image_url: prevState.image_url,
+        },
+      ],
+      image_url: "",
+    }));
   };
 
   render() {
     return (
       <div>
+        {this.state.photos.map((photo) => (
+          <img src={photo.image_url} />
+        ))}
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -37,13 +40,24 @@ export default class CreatePost extends Component {
             this.props.history.push("/profile");
           }}
         >
-          <h3>Create Food</h3>
+          <h3>Create Post</h3>
+
           <input
             type="text"
-            value={this.state.name}
+            name="image_url"
+            placeholder="image url"
+            value={this.state.image_url}
             onChange={this.handleChange}
           />
-          <button>Submit</button>
+          <button onClick={this.addPhoto}>Add photo</button>
+          <input
+            type="text"
+            name="content"
+            placeholder="Caption"
+            value={this.state.content}
+            onChange={this.handleChange}
+          />
+          <button>Post</button>
         </form>
       </div>
     );

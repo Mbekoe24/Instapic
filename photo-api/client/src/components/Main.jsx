@@ -6,12 +6,15 @@ import {
   postPost,
   putPost,
   destroyPost,
+  postPhoto,
 } from "../services/api-helper";
 import ShowPosts from "./ShowPosts";
 import Login from "./Login";
 import SignUp from "./SignUp";
-import Profile from "./Profile"
-import EditProfile from "./EditProfile"
+import Profile from "./Profile";
+import EditProfile from "./EditProfile";
+import Header from "./Header";
+import CreatePost from "./CreatePost";
 
 export default class Main extends Component {
   state = {
@@ -23,32 +26,32 @@ export default class Main extends Component {
     this.readAllPosts();
     this.readAllPhotos();
   }
-
   readAllPosts = async () => {
     const posts = await getAllPosts();
     this.setState({ posts });
   };
-
   readAllPhotos = async () => {
     const photos = await getAllPhotos();
     this.setState({ photos });
   };
 
-  handleFoodSubmit = async (postData) => {
-    const newPost = await postPost(postData);
+  handlePostSubmit = async (e) => {
+    e.preventDefault();
+    const { content, photos } = this.state;
+    const newPost = await postPhoto({ content, photos });
     this.setState((prevState) => ({
-      foods: [...prevState.posts, newPost],
+      posts: [...prevState.posts, newPost],
     }));
   };
 
-  handlePostUpdate = async (id, postData) => {
-    const updatedPost = await putPost(id, postData);
-    this.setState((prevState) => ({
-      foods: prevState.posts.map((post) => {
-        return post.id === id ? updatedPost : post;
-      }),
-    }));
-  };
+  // handlePostUpdate = async (id, postData) => {
+  //   const updatedPost = await putPost(id, postData);
+  //   this.setState((prevState) => ({
+  //     foods: prevState.posts.map((post) => {
+  //       return post.id === id ? updatedPost : post;
+  //     }),
+  //   }));
+  // };
 
   handlePostDelete = async (id) => {
     await destroyPost(id);
@@ -62,6 +65,17 @@ export default class Main extends Component {
   render() {
     return (
       <main>
+        {this.props.currentUser && (
+          <Route
+            path="/home"
+            render={() => (
+              <Header
+                currentUser={this.props.currentUser}
+                posts={this.state.posts}
+              />
+            )}
+          />
+        )}
         <Route
           exact
           path="/"
@@ -79,11 +93,21 @@ export default class Main extends Component {
           path="/home"
           render={() => <ShowPosts posts={this.state.posts} />}
         />
-
         <Route
-          path="/profile" render={() => <Profile posts={this.state.posts} />}
+          path="/profile"
+          render={() => (
+            <Profile
+              currentUser={this.props.currentUser}
+              posts={this.state.posts}
+            />
+          )}
         />
-        
+        <Route
+          path="/create-post"
+          render={() => (
+            <CreatePost handlePostSubmit={this.state.handlePostSubmit} />
+          )}
+        />
       </main>
     );
   }

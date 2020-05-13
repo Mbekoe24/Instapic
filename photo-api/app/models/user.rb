@@ -13,6 +13,7 @@ class User < ApplicationRecord
       id: id,
       username: username,
       email: email,
+      image: image,
       created_at: created_at,
       updated_at: updated_at
     }

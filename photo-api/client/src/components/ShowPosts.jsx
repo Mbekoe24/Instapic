@@ -3,8 +3,9 @@ import "./ShowPost.css";
 import Header from "./Header";
 export default function ShowPosts(props) {
   return (
+    //add carousel if post.length is greater than 1
     <div>
-      <Header />
+
       {/* <h3>Timeline</h3> */}
       <div className="post-container">
         {props.posts.map((post) => (
@@ -17,7 +18,7 @@ export default function ShowPosts(props) {
                     key={photo.id}
                     src={photo.image_url}
                   />
-                  Hello
+                  {props.posts.content}
                 </p>
                 <img
                   className="home-photos"

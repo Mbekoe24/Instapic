@@ -1,4 +1,6 @@
 .profile-picture {
+  display: block;
+  box-sizing: border-box;
   width: 150px;
   height: 150px;
   border-radius: 100px;
@@ -18,10 +20,39 @@
   background-color: #fafafa;
   border-radius: 10px;
   width: 100px;
-  font-size: 14px;
-  font-weight: 800;
-  font-family: "Helvetica Neue";
+  font-size: 12px;
+  font-weight: 600;
+  /* font-family: "Helvetica Neue"; */
 }
-/* .user-info {
+.edit-profile-button :hover {
+  pointer-events: none;
+}
+.user-photos {
+  width: 300px;
+  height: 300px;
+}
+.profile-divider {
+  border-top: 1px solid rgba(var(--b38, 219, 219, 219), 1);
+  color: #8e8e8e;
+  width: 80%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
 
-} */
+.post-button {
+  /* margin-top: 10px; */
+  width: 250px;
+  height: 50px;
+  background-color: rgba(142, 142, 142, 0.3);
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin-left: 20px;
+}

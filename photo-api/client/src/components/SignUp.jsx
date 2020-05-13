@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 export default class SignUp extends Component {
   state = {
@@ -30,7 +29,6 @@ export default class SignUp extends Component {
             }}
           >
             <p className="login-title">InstaPic</p>
-            {/* <label htmlFor="username">username:</label> */}
 
             <input
               className="email-input"
@@ -51,10 +49,9 @@ export default class SignUp extends Component {
               onChange={this.handleChange}
             />
             <br />
-            {/* <label htmlFor="email">email:</label> */}
 
             <br />
-            {/* <label htmlFor="password">password:</label> */}
+
             <input
               className="password-input"
               placeholder="password"
@@ -66,9 +63,6 @@ export default class SignUp extends Component {
             />
             <br />
             <button className="log-in-button">Sign Up</button>
-
-            {/* <hr className="sign-up-divider" /> */}
-            
           </form>
         </div>
       </div>

@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create(username: "Admin", email: "admin@email.com", password: "123456")
+User.create(username: "Admin", email: "admin@email.com", password: "123456", image:'https://pbs.twimg.com/media/DX-hCBoW0AEUts6.png' )
 
 p "#{User.count} user(s) created"
 Post.create(name: 'Administration', content: "testing", user_id: 1)

@@ -41,16 +41,9 @@ export default class Login extends Component {
               onChange={this.handleChange}
             />
             <br />
-            {/* <label htmlFor="email">email:</label>
-        <input
-          id="email"
-          type="text"
-          name="email"
-          value={email}
-          onChange={this.handleChange}
-        /> */}
+
             <br />
-            {/* <label htmlFor="password">password:</label> */}
+
             <input
               className="password-input"
               placeholder="password"
