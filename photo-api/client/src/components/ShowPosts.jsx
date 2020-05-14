@@ -5,7 +5,6 @@ export default function ShowPosts(props) {
   return (
     //add carousel if post.length is greater than 1
     <div>
-
       {/* <h3>Timeline</h3> */}
       <div className="post-container">
         {props.posts.map((post) => (
@@ -17,7 +16,8 @@ export default function ShowPosts(props) {
                     className="username-photo"
                     key={photo.id}
                     src={photo.image_url}
-                  />
+                  />{" "}
+                  {props.currentUser.username}
                   {props.posts.content}
                 </p>
                 <img

@@ -16,6 +16,12 @@
 .bar {
   margin-top: 20px;
 }
+.edit-button {
+  background-color: none;
+}
+.edit-icon button {
+  display: none;
+}
 .header-title {
   display: inline-block;
   font-family: "Helvetica Neue";
@@ -25,8 +31,9 @@
 }
 .home-image {
   align-items: flex-end;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
 }
 .search-form {
   display: flex;
@@ -40,10 +47,12 @@
   border-radius: 90px;
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 5px;
 }
 .edit-icon {
   width: 35px;
   height: 35px;
+  margin-bottom: 5px;
 }
 .search-input {
   width: 200px;

@@ -51,7 +51,7 @@ export const getOnePost = async (id) => {
   const resp = await api.get(`/posts/${id}`);
   return resp.data;
 };
-
+//
 export const postPost = async (postData) => {
   const resp = await api.post("/posts", postData);
   return resp.data;
@@ -79,7 +79,7 @@ export const getOnePhoto = async (id) => {
   const resp = await api.get(`/photos/${id}`);
   return resp.data;
 };
-
+//
 export const postPhoto = async (photoData) => {
   const resp = await api.post("/photos", photoData);
   return resp.data;

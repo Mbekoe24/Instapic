@@ -24,10 +24,7 @@ export default function Profile(props) {
               <p>Bio</p>
             </div>
           </div>
-          {/* ////////////////// */}
-
-          {/* ///////////// */}
-          {/* renders alll post  */}
+        
           <hr className="profile-divider" />
 
           <Link to="create-post">

@@ -38,7 +38,9 @@ export default class Main extends Component {
   handlePostSubmit = async (e) => {
     e.preventDefault();
     const { content, photos } = this.state;
-    const newPost = await postPhoto({ content, photos });
+    console.log("content", content);
+    console.log("photos", photos);
+    const newPost = await postPost({ content, photos });
     this.setState((prevState) => ({
       posts: [...prevState.posts, newPost],
     }));
@@ -91,7 +93,12 @@ export default class Main extends Component {
         />
         <Route
           path="/home"
-          render={() => <ShowPosts posts={this.state.posts} />}
+          render={() => (
+            <ShowPosts
+              currentUser={this.props.currentUser}
+              posts={this.state.posts}
+            />
+          )}
         />
         <Route
           path="/profile"
@@ -104,8 +111,8 @@ export default class Main extends Component {
         />
         <Route
           path="/create-post"
-          render={() => (
-            <CreatePost handlePostSubmit={this.state.handlePostSubmit} />
+          render={(props) => (
+            <CreatePost {...props} handlePostSubmit={this.handlePostSubmit} />
           )}
         />
       </main>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "./Header";
 
 export default class CreatePost extends Component {
   state = {
@@ -35,8 +34,9 @@ export default class CreatePost extends Component {
         ))}
         <form
           onSubmit={(e) => {
-            e.preventDefault();
-            this.props.handlePostSubmit(this.state);
+            this.props.handlePostSubmit(e);
+            // debugger;
+            // console.log(this.props.handlePostSubmit(e));
             this.props.history.push("/profile");
           }}
         >
@@ -57,7 +57,7 @@ export default class CreatePost extends Component {
             value={this.state.content}
             onChange={this.handleChange}
           />
-          <button>Post</button>
+          <button type="submit">Post</button>
         </form>
       </div>
     );
