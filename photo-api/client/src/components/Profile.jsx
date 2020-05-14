@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./Header";
 import "./Profile.css";
 
 import { Link } from "react-router-dom";
@@ -9,11 +8,6 @@ export default function Profile(props) {
     <>
       {props.currentUser && (
         <div>
-          <Header
-            currentUser={props.currentUser}
-            posts={props.posts}
-            handleLogout={props.handleLogout}
-          />
           <div className="bio-container">
             <img
               className="profile-picture"
@@ -25,7 +19,7 @@ export default function Profile(props) {
                 {props.currentUser.username}
                 <button className="edit-profile-button">Edit Profile</button>
               </h2>
-              <p> Post: Followers: Following: </p>
+              <p> Post: Followers: 7,000 Following: 90 </p>
 
               <p>Bio</p>
             </div>
@@ -36,21 +30,38 @@ export default function Profile(props) {
           <Link to="create-post">
             <button className="post-button">Post</button>
           </Link>
-          {props.posts
-            .filter((post) => post.user_id === props.currentUser.id)
-            .map((post) => (
-              <div>
-                {post.photos.map((photo) => (
-                  <div className="image-container">
-                    <img 
-                      className="user-photos"
-                      key={photo.id}
-                      src={photo.image_url}
-                    />
-                  </div>
-                ))}
-              </div>
-            ))}
+          <div className="image-container">
+            {props.posts
+              .filter((post) => post.user_id === props.currentUser.id)
+              .map((post) => (
+                <>
+                  {post.photos.map((photo) => (
+                    <div className="profile-img-border">
+                      <img
+                        className="user-photos"
+                        key={photo.id}
+                        src={photo.image_url}
+                      />
+                      <Link to="/photos/:id/edit">
+                        <img
+                          className="three-dot-edit"
+                          src="https://i.imgur.com/n34o9L2.png"
+                          alt="Edit"
+                        />
+                      </Link>
+                      <img
+                        className="trash-can"
+                        onClick={props.handlePostDelete}
+                        src="https://i.imgur.com/mKYX2Yz.png"
+                        alt="Delete"
+                      />
+
+                      
+                    </div>
+                  ))}
+                </>
+              ))}
+          </div>
         </div>
       )}
     </>

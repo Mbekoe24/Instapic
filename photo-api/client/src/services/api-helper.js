@@ -53,7 +53,7 @@ export const getOnePost = async (id) => {
 };
 //
 export const postPost = async (postData) => {
-  const resp = await api.post("/posts", postData);
+  const resp = await api.post("/posts", { post: postData });
   return resp.data;
 };
 // update content of a post which is updating
@@ -63,7 +63,7 @@ export const putPost = async (id, postData) => {
 };
 
 export const destroyPost = async (id) => {
-  const resp = await api.delete(`/post/${id}`);
+  const resp = await api.delete(`/posts/${id}`);
   return resp;
 };
 // ===================================

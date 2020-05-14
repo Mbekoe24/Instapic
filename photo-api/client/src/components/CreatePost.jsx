@@ -29,18 +29,20 @@ export default class CreatePost extends Component {
   render() {
     return (
       <div>
-        <Header
+        {/* <Header
           handleLogout={this.props.handleLogout}
           currentUser={this.props.currentUser}
           posts={this.props.posts}
-        />
+        /> */}
         {this.state.photos.map((photo) => (
           <img src={photo.image_url} />
         ))}
 
         <form
           onSubmit={(e) => {
-            this.props.handlePostSubmit(e);
+            e.preventDefault();
+            const { content, photos } = this.state;
+            this.props.handlePostSubmit({ content, photos });
             // this.props.handlePhotoSubmit(e);
             // debugger;
             // console.log(this.props.handlePostSubmit(e));

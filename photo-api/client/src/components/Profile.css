@@ -1,6 +1,6 @@
 .profile-picture {
-  display: block;
-  box-sizing: border-box;
+  /* display: block;
+  box-sizing: border-box; */
   width: 150px;
   height: 150px;
   border-radius: 100px;
@@ -22,7 +22,6 @@
   width: 100px;
   font-size: 12px;
   font-weight: 600;
-  /* font-family: "Helvetica Neue"; */
 }
 .edit-profile-button :hover {
   pointer-events: none;
@@ -30,6 +29,7 @@
 .user-photos {
   width: 300px;
   height: 300px;
+  border-radius: 10px;
 }
 .profile-divider {
   border-top: 1px solid rgba(var(--b38, 219, 219, 219), 1);
@@ -44,7 +44,7 @@
   width: 250px;
   height: 50px;
   font-weight: 800;
-  background-color:#FFFFFF ;
+  background-color: #ffffff;
   border-radius: 30px;
   margin-bottom: 20px;
 }
@@ -56,4 +56,25 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   margin-left: 20px;
+}
+
+.profile-img-border {
+  /* border: 5px solid; */
+  padding-bottom: 40px;
+}
+.trash-can {
+  display: block;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+}
+.three-dot-edit {
+  display: block;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
 }

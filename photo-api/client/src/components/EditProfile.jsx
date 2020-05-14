@@ -15,18 +15,18 @@ export default class UpdateFood extends Component {
     });
   };
 
-  addPhoto = (e) => {
-    e.preventDefault();
-    this.setState((prevState) => ({
-      photos: [
-        ...prevState.photos,
-        {
-          image_url: prevState.image_url,
-        },
-      ],
-      image_url: "",
-    }));
-  };
+  // addPhoto = (e) => {
+  //   e.preventDefault();
+  //   this.setState((prevState) => ({
+  //     photos: [
+  //       ...prevState.photos,
+  //       {
+  //         image_url: prevState.image_url,
+  //       },
+  //     ],
+  //     image_url: "",
+  //   }));
+  // };
 
   componentDidMount() {
     this.setFormData();
@@ -42,11 +42,29 @@ export default class UpdateFood extends Component {
   render() {
     return (
       <>
-        <Header
-          handleLogout={this.props.handleLogout}
-          currentUser={this.props.currentUser}
-          posts={this.props.posts}
-        />
+        {/* {props.posts.map((post) => (
+          <div>
+            {post.photos.map((photo) => (
+              <div className="img-border">
+                <p className="username-title">
+                  <img
+                    className="username-photo"
+                    key={photo.id}
+                    src={photo.image_url}
+                  />
+                  {post.user.username}
+                  {props.posts.content}
+                </p>
+                <img
+                  className="home-photos"
+                  key={photo.id}
+                  src={photo.image_url}
+                />
+                <p className="username-content"> {post.content}</p>
+              </div>
+            ))}
+          </div>
+        ))} */}
         <form
           onSubmit={(e) => {
             e.preventDefault();

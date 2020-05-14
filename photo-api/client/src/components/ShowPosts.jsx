@@ -16,8 +16,8 @@ export default function ShowPosts(props) {
                     key={photo.id}
                     src={photo.image_url}
                   />
-{/* change to specific users username that posted not current user */}
-                  {props.currentUser && props.currentUser.username}
+                  {/* change to specific users username that posted not current user */}
+                  {post.user.username}
                   {props.posts.content}
                 </p>
                 <img

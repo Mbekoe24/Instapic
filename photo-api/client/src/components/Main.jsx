@@ -35,12 +35,10 @@ export default class Main extends Component {
     this.setState({ photos });
   };
   //submits content
-  handlePostSubmit = async (e) => {
-    e.preventDefault();
-    const { content, photos } = this.state;
-    // console.log("content", content);
-    // console.log("photos", photos);
-    const newPost = await postPost({ content, photos });
+  handlePostSubmit = async (postData) => {
+    // e.preventDefault();
+    // const { content, photos } = this.state;
+    const newPost = await postPost(postData);
     this.setState((prevState) => ({
       posts: [...prevState.posts, newPost],
     }));
@@ -58,6 +56,7 @@ export default class Main extends Component {
   //   }));
   // };
   //updates content
+
   handlePostUpdate = async (id, postData) => {
     const updatedPost = await putPost(id, postData);
     this.setState((prevState) => ({
@@ -67,6 +66,7 @@ export default class Main extends Component {
     }));
   };
 
+  //working on it
   handlePostDelete = async (id) => {
     await destroyPost(id);
     this.setState((prevState) => ({
@@ -81,7 +81,7 @@ export default class Main extends Component {
       <main>
         {this.props.currentUser && (
           <Route
-            path="/home"
+            path="/"
             render={() => (
               <Header
                 currentUser={this.props.currentUser}
@@ -119,6 +119,7 @@ export default class Main extends Component {
             <Profile
               currentUser={this.props.currentUser}
               posts={this.state.posts}
+              handlePostDelete={this.handlePostDelete}
             />
           )}
         />
@@ -145,29 +146,10 @@ export default class Main extends Component {
                 handlePostUpdate={this.handlePostUpdate}
                 photoId={id}
                 posts={this.state.posts}
-                // handlePostSubmit={this.handlePostSubmit}
               />
             );
           }}
         />
-        {/* <Route
-          path="/photo/:id/edit"
-          render={(props) => (
-              const { id } = props.match.params
-         return <EditProfile
-            currentUser={this.props.currentUser}{...props}
-            handlePhotoUpdate={this.handlePhotoUpdate}
-            photoId={id}
-            posts={this.state.posts}
-
-              // handlePostSubmit={this.handlePostSubmit
-          
-       
-
-
-            />
-          )}
-        /> */}
       </main>
     );
   }

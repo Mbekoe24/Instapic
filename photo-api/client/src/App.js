@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import "./App.css";
+
 import Main from "./components/Main";
 import {
   loginUser,
@@ -45,6 +46,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+     
         <Main
           currentUser={this.state.currentUser}
           handleRegister={this.handleRegister}

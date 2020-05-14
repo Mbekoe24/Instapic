@@ -4,17 +4,18 @@ class PostsController < ApplicationController
 
     def index
       @posts = Post.all
-      render json: @posts, include: :photos, status: :ok
+      render json: @posts, include: [:photos, :user], status: :ok
     end
 
   def show
-        render json: @post, include: :photos, status: :ok
+        render json: @post, include:  [:photos, :user], status: :ok
     end
 
        def create
-        @post = Post.create(post_params) 
-        params[:photos].map do |photo|
-          new_photo = Photo.create(photo)
+        @post = Post.new(content: post_params[:content])
+        @current_user.posts << @post
+        post_params[:photos].map do |photo|
+          new_photo = Photo.new(photo)
           @post.photos << new_photo
         end
             render json: @post, include: :photos, status: :created
@@ -37,7 +38,7 @@ private
         @post = Post.find(params[:id])
       end
     def post_params
-        params.require(:post).permit(:content)
+        params.require(:post).permit(:content, :photos => [:image_url ])
     end
 
 end
