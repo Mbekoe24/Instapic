@@ -80,8 +80,8 @@ export const getOnePhoto = async (id) => {
   return resp.data;
 };
 //
-export const postPhoto = async (photoData) => {
-  const resp = await api.post("/photos", photoData);
+export const postPhoto = async (post_id, photoData) => {
+  const resp = await api.post(`/posts/${post_id}/photos/`, photoData);
   return resp.data;
 };
 // editng photo you want to update - one individual photo

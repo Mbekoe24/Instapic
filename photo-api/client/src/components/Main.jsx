@@ -34,26 +34,38 @@ export default class Main extends Component {
     const photos = await getAllPhotos();
     this.setState({ photos });
   };
-
+  //submits content
   handlePostSubmit = async (e) => {
     e.preventDefault();
     const { content, photos } = this.state;
-    console.log("content", content);
-    console.log("photos", photos);
+    // console.log("content", content);
+    // console.log("photos", photos);
     const newPost = await postPost({ content, photos });
     this.setState((prevState) => ({
       posts: [...prevState.posts, newPost],
     }));
   };
 
-  // handlePostUpdate = async (id, postData) => {
-  //   const updatedPost = await putPost(id, postData);
+  //submits photo
+  // handlePhotoSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const { photos } = this.state;
+  //   // console.log("content", content);
+  //   // console.log("photos", photos);
+  //   const newPhoto = await postPhoto({ photos });
   //   this.setState((prevState) => ({
-  //     foods: prevState.posts.map((post) => {
-  //       return post.id === id ? updatedPost : post;
-  //     }),
+  //     posts: [...prevState.photos, newPhoto],
   //   }));
   // };
+  //updates content
+  handlePostUpdate = async (id, postData) => {
+    const updatedPost = await putPost(id, postData);
+    this.setState((prevState) => ({
+      foods: prevState.posts.map((post) => {
+        return post.id === id ? updatedPost : post;
+      }),
+    }));
+  };
 
   handlePostDelete = async (id) => {
     await destroyPost(id);
@@ -74,6 +86,7 @@ export default class Main extends Component {
               <Header
                 currentUser={this.props.currentUser}
                 posts={this.state.posts}
+                handleLogout={this.props.handleLogout}
               />
             )}
           />
@@ -112,9 +125,49 @@ export default class Main extends Component {
         <Route
           path="/create-post"
           render={(props) => (
-            <CreatePost {...props} handlePostSubmit={this.handlePostSubmit} />
+            <CreatePost
+              currentUser={this.props.currentUser}
+              posts={this.state.posts}
+              {...props}
+              handlePostSubmit={this.handlePostSubmit}
+            />
           )}
         />
+
+        <Route
+          path="/photos/:id/edit"
+          render={(props) => {
+            const { id } = props.match.params;
+            return (
+              <EditProfile
+                {...props}
+                currentUser={this.props.currentUser}
+                handlePostUpdate={this.handlePostUpdate}
+                photoId={id}
+                posts={this.state.posts}
+                // handlePostSubmit={this.handlePostSubmit}
+              />
+            );
+          }}
+        />
+        {/* <Route
+          path="/photo/:id/edit"
+          render={(props) => (
+              const { id } = props.match.params
+         return <EditProfile
+            currentUser={this.props.currentUser}{...props}
+            handlePhotoUpdate={this.handlePhotoUpdate}
+            photoId={id}
+            posts={this.state.posts}
+
+              // handlePostSubmit={this.handlePostSubmit
+          
+       
+
+
+            />
+          )}
+        /> */}
       </main>
     );
   }

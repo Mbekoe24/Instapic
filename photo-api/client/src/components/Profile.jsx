@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import "./Profile.css";
+
 import { Link } from "react-router-dom";
 
 export default function Profile(props) {
@@ -8,6 +9,11 @@ export default function Profile(props) {
     <>
       {props.currentUser && (
         <div>
+          <Header
+            currentUser={props.currentUser}
+            posts={props.posts}
+            handleLogout={props.handleLogout}
+          />
           <div className="bio-container">
             <img
               className="profile-picture"
@@ -24,7 +30,7 @@ export default function Profile(props) {
               <p>Bio</p>
             </div>
           </div>
-        
+
           <hr className="profile-divider" />
 
           <Link to="create-post">
@@ -36,7 +42,7 @@ export default function Profile(props) {
               <div>
                 {post.photos.map((photo) => (
                   <div className="image-container">
-                    <img
+                    <img 
                       className="user-photos"
                       key={photo.id}
                       src={photo.image_url}

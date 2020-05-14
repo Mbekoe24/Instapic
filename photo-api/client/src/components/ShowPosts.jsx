@@ -1,11 +1,10 @@
 import React from "react";
 import "./ShowPost.css";
-import Header from "./Header";
+
 export default function ShowPosts(props) {
   return (
     //add carousel if post.length is greater than 1
     <div>
-      {/* <h3>Timeline</h3> */}
       <div className="post-container">
         {props.posts.map((post) => (
           <div>
@@ -16,8 +15,9 @@ export default function ShowPosts(props) {
                     className="username-photo"
                     key={photo.id}
                     src={photo.image_url}
-                  />{" "}
-                  {props.currentUser.username}
+                  />
+{/* change to specific users username that posted not current user */}
+                  {props.currentUser && props.currentUser.username}
                   {props.posts.content}
                 </p>
                 <img

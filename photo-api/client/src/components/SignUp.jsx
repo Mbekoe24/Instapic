@@ -25,7 +25,7 @@ export default class SignUp extends Component {
             onSubmit={(e) => {
               e.preventDefault();
               this.props.handleRegister(this.state);
-              this.props.history.push("/signin");
+              this.props.history.push("/");
             }}
           >
             <p className="login-title">InstaPic</p>

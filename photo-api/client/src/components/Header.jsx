@@ -18,12 +18,6 @@ export default function Header(props) {
         />
       </form> */}
 
-      {/* {
-        <>
-          <button onClick={props.handleLogout}>Logout</button>
-        </>
-      } */}
-
       <>
         <div className="nav-toolbar">
           <Link to="/home">
@@ -37,24 +31,24 @@ export default function Header(props) {
               <img className="profile-icon bar" src={props.currentUser.image} />
             )}
           </Link>
-          {/* <select name="" id="">
-            <option value="Log Out">Log Out</option>
-            <option value="Edit-bio">Edit Bio</option>
-          </select> */}
+
           <img
             className="edit-icon bar"
             src="https://i.imgur.com/xHzjCaG.png"
             onClick={props.handleLogout}
           />
+          {/* {
+            <>
+              <button
+                className="log-out-button bar"
+                onClick={props.handleLogout}
+              >
+                Logout
+              </button>
+            </>
+          } */}
         </div>
       </>
-      {/*      
-      {props.currentUser && (
-        <>
-          <Link to="/posts">posts</Link>
-          <Link to="/photos">Photos</Link>
-        </>
-      )} */}
     </div>
   );
 }

@@ -14,6 +14,6 @@ Post.create(name: 'Administration', content: "testing", user_id: 1)
 Photo.create(name: 'Invader Admin', image_url:'https://pbs.twimg.com/media/DX-hCBoW0AEUts6.png', post_id: 1)
 
 
-User.create(username: "Jason56", email: "jason56@email.com", password: "121212")
+User.create(username: "Jason56", email: "jason56@email.com", password: "121212", image:'https://www.indiewire.com/wp-content/uploads/2018/06/02_CobraKai.jpg?w=780',  )
 Post.create(name: 'Jason', content: "I know best", user_id: 2)
-Photo.create(name: 'Jason', image_url:'https://www.indiewire.com/wp-content/uploads/2018/06/02_CobraKai.jpg?w=780', post_id: 2)
+Photo.create(name: 'Jason', image_url:'https://www.indiewire.com/wp-content/uploads/2018/06/02_CobraKai.jpg?w=780',  post_id: 2)

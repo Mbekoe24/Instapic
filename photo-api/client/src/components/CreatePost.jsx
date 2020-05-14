@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Header from "./Header";
 export default class CreatePost extends Component {
   state = {
     content: "",
@@ -29,12 +29,19 @@ export default class CreatePost extends Component {
   render() {
     return (
       <div>
+        <Header
+          handleLogout={this.props.handleLogout}
+          currentUser={this.props.currentUser}
+          posts={this.props.posts}
+        />
         {this.state.photos.map((photo) => (
           <img src={photo.image_url} />
         ))}
+
         <form
           onSubmit={(e) => {
             this.props.handlePostSubmit(e);
+            // this.props.handlePhotoSubmit(e);
             // debugger;
             // console.log(this.props.handlePostSubmit(e));
             this.props.history.push("/profile");
