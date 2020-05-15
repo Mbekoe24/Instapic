@@ -16,6 +16,8 @@ export default function ShowPosts(props) {
                     key={photo.id}
                     src={photo.image_url}
                   />
+
+                  {/* error out ask for help tmm */}
                   {/* change to specific users username that posted not current user */}
                   {post.user.username}
                   {props.posts.content}
@@ -25,7 +27,12 @@ export default function ShowPosts(props) {
                   key={photo.id}
                   src={photo.image_url}
                 />
-                <p className="username-content"> {post.content}</p>
+                <p className="username-content">
+                  <span className="content-text">
+                    <span className="username-border-text"> {post.user.username}</span>
+                    {post.content}
+                  </span>
+                </p>
               </div>
             ))}
           </div>

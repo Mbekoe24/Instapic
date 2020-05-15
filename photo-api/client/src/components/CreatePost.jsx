@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Header from "./Header";
+import "./CreatePost.css";
+
 export default class CreatePost extends Component {
   state = {
     content: "",
@@ -28,39 +29,44 @@ export default class CreatePost extends Component {
 
   render() {
     return (
-      <div>
-    
-        {this.state.photos.map((photo) => (
-          <img src={photo.image_url} />
-        ))}
+      <div className="create-post-container">
+        <div>
+          {this.state.photos.map((photo) => (
+            <img className="preview-img" src={photo.image_url} />
+          ))}
 
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            const { content, photos } = this.state;
-            this.props.handlePostSubmit({ content, photos });
-            this.props.history.push("/profile");
-          }}
-        >
-          <h3>Create Post</h3>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              const { content, photos } = this.state;
+              this.props.handlePostSubmit({ content, photos });
+              this.props.history.push("/profile");
+            }}
+          >
+            <h3>Create Post</h3>
 
-          <input
-            type="text"
-            name="image_url"
-            placeholder="image url"
-            value={this.state.image_url}
-            onChange={this.handleChange}
-          />
-          <button onClick={this.addPhoto}>Add photo</button>
-          <input
-            type="text"
-            name="content"
-            placeholder="Caption"
-            value={this.state.content}
-            onChange={this.handleChange}
-          />
-          <button type="submit">Post</button>
-        </form>
+            <input
+              type="text"
+              name="image_url"
+              placeholder="image url"
+              value={this.state.image_url}
+              onChange={this.handleChange}
+            />
+            <button className="submit-button" onClick={this.addPhoto}>
+              Add photo
+            </button>
+            <input
+              type="text"
+              name="content"
+              placeholder="Caption"
+              value={this.state.content}
+              onChange={this.handleChange}
+            />
+            <button className="submit-button" type="submit">
+              Post
+            </button>
+          </form>
+        </div>
       </div>
     );
   }

@@ -1,0 +1,20 @@
+.create-post-container {
+  color: black;
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .create-post-container {
+    display: grid;
+    grid-template-columns: 200px;
+    margin-left: 75px;
+  }
+  .submit-button {
+    width: 130px;
+  }
+  .preview-img {
+    width: 220px;
+    height: 150px;
+    border-radius: 10px;
+    margin-left: -10px;
+  }
+}
