@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getOnePost } from "../services/api-helper";
+import "./EditProfile.css";
 
 export default class EditProfile extends Component {
   state = {
@@ -55,7 +56,7 @@ export default class EditProfile extends Component {
             this.state.post.photos.map((photo) => (
               <div className="img-border">
                 <img
-                  className="home-photos"
+                  className="edit-profile-home-photos"
                   key={photo.id}
                   src={photo.image_url}
                 />

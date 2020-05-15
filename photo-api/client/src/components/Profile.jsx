@@ -1,6 +1,7 @@
 import React from "react";
 import "./Profile.css";
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 
 export default function Profile(props) {
@@ -55,9 +56,10 @@ export default function Profile(props) {
                         //   props.handleLocationDelete(props.locationId);
                         //   props.history.push("/locations");
                         // }}
+
+                        /// erroing out after pushing
                         onClick={() => {
                           props.handlePostDelete(post.id);
-                          props.history.push("/home");
                         }}
                         src="https://i.imgur.com/mKYX2Yz.png"
                         alt="Delete"

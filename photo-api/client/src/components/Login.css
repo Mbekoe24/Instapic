@@ -89,10 +89,56 @@ Link {
   .iPhone {
     display: none;
   }
+
+  .username-input {
+    width: 200px;
+  }
+  .password-input {
+    width: 200px;
+  }
+  .log-in-button {
+    width: 210px;
+  }
+  .sign-up-container {
+    width: 150px;
+  }
+  hr {
+    width: 270px;
+  }
+  .login-form {
+    margin-left: 50px;
+    width: 300px;
+  }
+  .email-input {
+    width: 200px;
+  }
 }
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
   .iPhone {
     display: none;
+  }
+
+  .username-input {
+    width: 150px;
+  }
+  .password-input {
+    width: 150px;
+  }
+  .log-in-button {
+    width: 180px;
+  }
+  .sign-up-container {
+    width: 150px;
+  }
+  hr {
+    width: 230px;
+  }
+  .login-form {
+    margin-left: 50px;
+    width: 300px;
+  }
+  .email-input {
+    width: 200px;
   }
 }
 /* iPhone 11 */

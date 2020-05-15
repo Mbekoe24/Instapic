@@ -18,7 +18,7 @@ class PostsController < ApplicationController
           new_photo = Photo.new(photo)
           @post.photos << new_photo
         end
-            render json: @post, include: :photos, status: :created
+            render json: @post, include: [:photos, :user], status: :created
     end
     
       def update

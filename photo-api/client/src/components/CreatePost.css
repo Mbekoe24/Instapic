@@ -18,3 +18,19 @@
     margin-left: -10px;
   }
 }
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .create-post-container {
+    display: grid;
+    grid-template-columns: 200px;
+    margin-left: 75px;
+  }
+  .submit-button {
+    width: 130px;
+  }
+  .preview-img {
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: -10px;
+  }
+}

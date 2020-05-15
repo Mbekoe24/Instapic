@@ -65,3 +65,16 @@ body {
   -moz-box-shadow: inset 0 0 2px #000000;
   -webkit-box-shadow: inset 0 0 2px #000000;
 }
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .username-title {
+    width: 300px;
+  }
+  .home-photos {
+    width: 300px;
+    height: 300px;
+  }
+  .username-content {
+    width: 300px;
+  }
+}

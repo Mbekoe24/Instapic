@@ -114,8 +114,9 @@ export default class Main extends Component {
         />
         <Route
           path="/profile"
-          render={() => (
+          render={(props) => (
             <Profile
+              {...props}
               // postId={post.id}
               currentUser={this.props.currentUser}
               posts={this.state.posts}
