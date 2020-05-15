@@ -34,10 +34,9 @@ export default class Main extends Component {
     const photos = await getAllPhotos();
     this.setState({ photos });
   };
+
   //submits content
   handlePostSubmit = async (postData) => {
-    // e.preventDefault();
-    // const { content, photos } = this.state;
     const newPost = await postPost(postData);
     this.setState((prevState) => ({
       posts: [...prevState.posts, newPost],
@@ -117,6 +116,7 @@ export default class Main extends Component {
           path="/profile"
           render={() => (
             <Profile
+              // postId={post.id}
               currentUser={this.props.currentUser}
               posts={this.state.posts}
               handlePostDelete={this.handlePostDelete}
@@ -136,7 +136,7 @@ export default class Main extends Component {
         />
 
         <Route
-          path="/photos/:id/edit"
+          path="/posts/:id/edit"
           render={(props) => {
             const { id } = props.match.params;
             return (
@@ -144,7 +144,7 @@ export default class Main extends Component {
                 {...props}
                 currentUser={this.props.currentUser}
                 handlePostUpdate={this.handlePostUpdate}
-                photoId={id}
+                postId={id}
                 posts={this.state.posts}
               />
             );

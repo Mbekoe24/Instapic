@@ -42,7 +42,7 @@ export default function Profile(props) {
                         key={photo.id}
                         src={photo.image_url}
                       />
-                      <Link to="/photos/:id/edit">
+                      <Link to={`/posts/${post.id}/edit`}>
                         <img
                           className="three-dot-edit"
                           src="https://i.imgur.com/n34o9L2.png"
@@ -51,12 +51,17 @@ export default function Profile(props) {
                       </Link>
                       <img
                         className="trash-can"
-                        onClick={props.handlePostDelete}
+                        // onClick={() => {
+                        //   props.handleLocationDelete(props.locationId);
+                        //   props.history.push("/locations");
+                        // }}
+                        onClick={() => {
+                          props.handlePostDelete(post.id);
+                          props.history.push("/home");
+                        }}
                         src="https://i.imgur.com/mKYX2Yz.png"
                         alt="Delete"
                       />
-
-                      
                     </div>
                   ))}
                 </>

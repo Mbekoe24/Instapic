@@ -29,11 +29,7 @@ export default class CreatePost extends Component {
   render() {
     return (
       <div>
-        {/* <Header
-          handleLogout={this.props.handleLogout}
-          currentUser={this.props.currentUser}
-          posts={this.props.posts}
-        /> */}
+    
         {this.state.photos.map((photo) => (
           <img src={photo.image_url} />
         ))}
@@ -43,9 +39,6 @@ export default class CreatePost extends Component {
             e.preventDefault();
             const { content, photos } = this.state;
             this.props.handlePostSubmit({ content, photos });
-            // this.props.handlePhotoSubmit(e);
-            // debugger;
-            // console.log(this.props.handlePostSubmit(e));
             this.props.history.push("/profile");
           }}
         >

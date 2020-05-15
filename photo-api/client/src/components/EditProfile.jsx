@@ -1,85 +1,69 @@
 import React, { Component } from "react";
-import { getOnePhoto } from "../services/api-helper";
-import Header from "./Header";
+import { getOnePost } from "../services/api-helper";
 
-export default class UpdateFood extends Component {
+export default class EditProfile extends Component {
   state = {
-    photos: [],
-    content: "",
-    image_url: "",
+    post: "",
+    contentData: { content: "" },
   };
   handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({
-      [name]: value,
+      contentData: { [name]: value },
     });
   };
 
-  // addPhoto = (e) => {
-  //   e.preventDefault();
-  //   this.setState((prevState) => ({
-  //     photos: [
-  //       ...prevState.photos,
-  //       {
-  //         image_url: prevState.image_url,
-  //       },
-  //     ],
-  //     image_url: "",
-  //   }));
-  // };
-
   componentDidMount() {
-    this.setFormData();
+    this.setContentData();
   }
 
-  setFormData = async () => {
-    const photoItem = await getOnePhoto(this.props.photoId);
+  setContentData = async () => {
+    const onePost = await getOnePost(this.props.postId);
     this.setState({
-      name: photoItem.name,
+      post: onePost,
+      contentData: { content: onePost.content },
     });
   };
 
   render() {
     return (
       <>
-        {/* {props.posts.map((post) => (
-          <div>
-            {post.photos.map((photo) => (
+        <div>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              this.props.handlePostUpdate(
+                this.props.postId,
+                this.state.contentData
+              );
+              this.props.history.push("/home");
+            }}
+          >
+            {/* <p> {this.props.posts.map((post) => post.content)}</p> */}
+
+            <h3>Update Post</h3>
+            <input
+              type="text"
+              value={this.state.contentData.content}
+              name="content"
+              onChange={this.handleChange}
+            />
+            <button>Submit</button>
+          </form>
+
+          {this.state.post.photos &&
+            this.state.post.photos.map((photo) => (
               <div className="img-border">
-                <p className="username-title">
-                  <img
-                    className="username-photo"
-                    key={photo.id}
-                    src={photo.image_url}
-                  />
-                  {post.user.username}
-                  {props.posts.content}
-                </p>
                 <img
                   className="home-photos"
                   key={photo.id}
                   src={photo.image_url}
                 />
-                <p className="username-content"> {post.content}</p>
+
+                <p> {this.state.contentData.content}</p>
               </div>
             ))}
-          </div>
-        ))} */}
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            this.props.handlePostUpdate(this.props.photoId, this.state);
-            this.props.history.push("/photos");
-          }}
-        >
-          <h3>Update Photo</h3>
-          <input
-            type="text"
-            value={this.state.name}
-            onChange={this.handleChange}
-          />
-          <button>Submit</button>
-        </form>
+        </div>
       </>
     );
   }
