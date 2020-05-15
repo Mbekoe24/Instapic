@@ -6,7 +6,6 @@ import {
   postPost,
   putPost,
   destroyPost,
-  postPhoto,
 } from "../services/api-helper";
 import ShowPosts from "./ShowPosts";
 import Login from "./Login";
@@ -43,19 +42,6 @@ export default class Main extends Component {
     }));
   };
 
-  //submits photo
-  // handlePhotoSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const { photos } = this.state;
-  //   // console.log("content", content);
-  //   // console.log("photos", photos);
-  //   const newPhoto = await postPhoto({ photos });
-  //   this.setState((prevState) => ({
-  //     posts: [...prevState.photos, newPhoto],
-  //   }));
-  // };
-  //updates content
-
   handlePostUpdate = async (id, postData) => {
     const updatedPost = await putPost(id, postData);
     this.setState((prevState) => ({
@@ -65,7 +51,6 @@ export default class Main extends Component {
     }));
   };
 
-  //working on it
   handlePostDelete = async (id) => {
     await destroyPost(id);
     this.setState((prevState) => ({
@@ -117,7 +102,6 @@ export default class Main extends Component {
           render={(props) => (
             <Profile
               {...props}
-              // postId={post.id}
               currentUser={this.props.currentUser}
               posts={this.state.posts}
               handlePostDelete={this.handlePostDelete}

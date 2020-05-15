@@ -31,7 +31,6 @@ export default class Login extends Component {
               }}
             >
               <p className="login-title">InstaPic</p>
-              {/* <label htmlFor="username">username:</label> */}
               <input
                 className="username-input"
                 placeholder="username"

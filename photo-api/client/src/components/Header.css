@@ -1,27 +1,16 @@
-/* body {
-  background-color: #fafafa;
-} */
 .header-container {
   display: flex;
   width: 100%;
   justify-content: space-around;
-  /* align-content: center;
-  text-align: left; */
   margin-bottom: 80px;
   align-items: row;
-  /* border-bottom: none; */
   border: 0.5px rgba(112, 112, 112, 0.5) solid;
   background-color: #ffffff;
 }
 .bar {
   margin-top: 10px;
 }
-/* .edit-button {
-  background-color: none;
-} */
-/* .edit-icon button {
-  display: none;
-} */
+
 .header-title {
   display: inline-block;
   font-family: "Helvetica Neue";
@@ -51,13 +40,7 @@
   margin-right: 20px;
   margin-bottom: 5px;
 }
-/* .log-out-button {
-  background-color: none;
-  margin-bottom: 10px;
-  width: 60px;
-  height: 50px;
-  border-radius: 100px;
-} */
+
 .edit-icon {
   width: 35px;
   height: 35px;

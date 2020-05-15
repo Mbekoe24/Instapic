@@ -6,17 +6,6 @@ export default function Header(props) {
   return (
     <div className="header-container">
       <p className="header-title">InstaPic</p>
-      {/* <form className="search-form" onSubmit={(e) => props.onSubmit(e)}>
-        <input
-          className="search-input"
-          value={props.username}
-          onChange={(e) => props.onChange(e)}
-          name="Search"
-          placeholder="Search"
-          type="text"
-          autoFocus
-        />
-      </form> */}
 
       <>
         <div className="nav-toolbar">
@@ -37,16 +26,6 @@ export default function Header(props) {
             src="https://i.imgur.com/xHzjCaG.png"
             onClick={props.handleLogout}
           />
-          {/* {
-            <>
-              <button
-                className="log-out-button bar"
-                onClick={props.handleLogout}
-              >
-                Logout
-              </button>
-            </>
-          } */}
         </div>
       </>
     </div>

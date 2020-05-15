@@ -40,8 +40,6 @@ export default class EditProfile extends Component {
               this.props.history.push("/home");
             }}
           >
-            {/* <p> {this.props.posts.map((post) => post.content)}</p> */}
-
             <h3>Update Post</h3>
             <input
               type="text"

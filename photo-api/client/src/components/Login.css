@@ -75,13 +75,10 @@ Link {
   font-weight: 800;
   color: #1eafc9;
 }
-/* span {
-  text-decoration: none;
-} */
+
 ::placeholder {
   color: #707070;
   text-align: center;
-  /* font-weight: 800; */
   font-size: 12px;
 }
 /* iphone 6, 6s, 7, 8 */
